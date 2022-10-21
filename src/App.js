@@ -90,7 +90,7 @@ cursor: pointer;
   
 export default function App (){
 
-const [input,setInput] = useState()
+const [input,setInput] = useState('')
 const [list,setList] = useState([])
 
 const Add = () =>{
@@ -100,7 +100,7 @@ const bolsaInput = {
   id:Date.now(),
   status:false
 }
-if(input !== "" && input.replace(/\d/g,"")){
+if(input !== "" ){
   setList((prevState) => [...prevState,bolsaInput])
   setInput('')
 }
@@ -119,7 +119,7 @@ setList(listaFiltrada)
       <GlobalStyle/>
       <Title>Lista de tarefas</Title>
       <form onSubmit={(e) => e.preventDefault()}>
-    <input value={input} onChange={(e) => {setInput(e.target.value)}}/>
+    <input value={input} onChange={(e) => {setInput(e.target.value.replace(/\d/g,""))}}/>
     <BtnAdd onClick={() => {Add()}}>Add</BtnAdd>
       </form>
     <Boxlist>
