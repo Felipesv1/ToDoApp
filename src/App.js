@@ -117,7 +117,7 @@ setList(listaFiltrada)
   return(
     <Container>
       <GlobalStyle/>
-      <Title>Lista de tarefas</Title>
+      <Title>TodoList</Title>
       <form onSubmit={(e) => e.preventDefault()}>
     <input value={input} onChange={(e) => {setInput(e.target.value.replace(/\d/g,""))}}/>
     <BtnAdd onClick={() => {Add()}}>Add</BtnAdd>
